@@ -205,7 +205,3 @@ High-impact implementation/release operations can pause for approval. A model ne
 - Rollback demonstrates governance semantics but does not deploy a real previous artifact.
 - Metrics are prototype-level and should be connected to operational telemetry in production.
 - Parallel execution uses a local thread pool; production should use durable workers.
-
-## 11. Interview explanation
-
-**“I treated agentic execution as a governed software delivery workflow rather than a chain of prompts. I modeled requirements, architecture, implementation, testing, security, documentation and release as nodes in a dependency graph. Independent work runs in parallel, release synchronizes on quality gates, and high-impact operations can pause for human approval. Each node has bounded retries and failure state, while audit events preserve decision lineage. If an upstream requirement changes, the orchestrator increments the context version and re-plans affected downstream stages. The LLM can propose work, but the orchestrator owns state, policy, approvals and safe-stop behavior.”**
